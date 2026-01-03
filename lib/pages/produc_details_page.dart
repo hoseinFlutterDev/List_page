@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:list_veiw/pages/payment_page.dart';
 
 class ProductDetailsScreen extends StatelessWidget {
   final String title;
@@ -128,6 +129,16 @@ class ProductDetailsScreen extends StatelessWidget {
                   child: ElevatedButton(
                     onPressed: () {
                       // عملیات خرید
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => PaymentScreen(
+                            title: title,
+                            price: price,
+                            imagePath: imagePath,
+                          ),
+                        ),
+                      );
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.white,
